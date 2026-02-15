@@ -1,0 +1,25 @@
+#BlueJ class context
+comment0.target=Cup
+comment0.text=\r\n\ A\ cup\ (taza)\ that\ forms\ part\ of\ the\ stacking\ tower\ simulation.\r\n\ This\ class\ follows\ the\ structure\ and\ style\ of\ the\ Shapes\ example\ provided\ in\ BlueJ,\r\n\ encapsulating\ drawing,\ visibility\ control,\ size\ adjustment,\ and\ positioning\ internally.\r\n\r\n\ @author\ \ \r\n\ @version\ 1.0\ (February\ 2026)\r\n
+comment1.params=number
+comment1.target=Cup(int)
+comment1.text=\r\n\ Create\ a\ new\ cup\ with\ the\ given\ number.\r\n\r\n\ @param\ number\ the\ numerical\ identifier\ of\ this\ cup\r\n
+comment2.params=
+comment2.target=int\ getHeightCm()
+comment2.text=\r\n\ Returns\ the\ height\ of\ this\ cup\ in\ centimeters.\r\n\ In\ this\ simulation,\ the\ height\ is\ defined\ as\ {@code\ 2*number\ -\ 1}.\r\n\r\n\ @return\ height\ of\ this\ cup\ in\ centimeters\r\n
+comment3.params=
+comment3.target=int\ getNumber()
+comment3.text=\r\n\ Returns\ the\ identifying\ number\ of\ this\ cup.\r\n\r\n\ @return\ cup\ number\r\n
+comment4.params=
+comment4.target=java.lang.String\ getType()
+comment4.text=\r\n\ Returns\ the\ type\ of\ this\ element.\r\n\r\n\ @return\ the\ string\ "cup"\r\n
+comment5.params=
+comment5.target=java.lang.String\ getColor()
+comment5.text=\r\n\ Computes\ the\ drawing\ color\ associated\ with\ this\ cup.\r\n\r\n\ @return\ a\ string\ representing\ the\ drawing\ color\r\n
+comment6.params=x\ y\ w\ h
+comment6.target=void\ makeVisibleAt(int,\ int,\ int,\ int)
+comment6.text=\r\n\ Makes\ the\ cup\ visible\ at\ a\ given\ position\ and\ size\ within\ the\ canvas.\r\n
+comment7.params=
+comment7.target=void\ makeInvisible()
+comment7.text=\r\n\ Makes\ the\ cup\ invisible\ by\ hiding\ all\ its\ internal\ rectangles.\r\n
+numComments=8
