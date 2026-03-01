@@ -1,0 +1,25 @@
+#BlueJ class context
+comment0.target=Lid
+comment0.text=\r\n\ A\ lid\ (tapa)\ that\ can\ be\ placed\ on\ top\ of\ a\ cup\ in\ the\ stacking\ tower.\r\n\ Each\ lid\ has\ an\ associated\ number\ and\ a\ fixed\ height\ of\ 1\ cm.\r\n\ This\ class\ uses\ a\ single\ {@link\ Rectangle}\ shape\ to\ draw\ the\ lid\ on\ the\r\n\ BlueJ\ Shapes\ canvas.\ The\ lid\ is\ always\ drawn\ as\ a\ solid-colored\ rectangle,\r\n\ where\ its\ color\ depends\ on\ its\ number,\ cycling\ through\ a\ predefined\ set\ \r\n\ of\ colors.\r\n\ @authors\ Angel-Garcia\ \ \r\n\ @version\ 1.0\ (February\ 2026)\r\n
+comment1.params=number
+comment1.target=Lid(int)
+comment1.text=\r\n\ Create\ a\ new\ lid\ with\ the\ given\ number.\r\n\ The\ lid\ is\ initially\ invisible\ until\ {@code\ makeVisibleAt}\ is\ called.\r\n\r\n\ @param\ number\ the\ numerical\ identifier\ of\ this\ lid\r\n
+comment2.params=
+comment2.target=int\ getHeightCm()
+comment2.text=\r\n\ Returns\ the\ height\ of\ this\ lid\ in\ centimeters.\r\n\ Lids\ always\ have\ a\ height\ of\ 1\ cm.\r\n\r\n\ @return\ 1\ \u2014\ the\ fixed\ height\ of\ a\ lid\r\n
+comment3.params=
+comment3.target=int\ getNumber()
+comment3.text=\r\n\ Returns\ the\ number\ assigned\ to\ this\ lid.\r\n\r\n\ @return\ the\ lid\ number\r\n
+comment4.params=
+comment4.target=java.lang.String\ getType()
+comment4.text=\r\n\ Returns\ the\ type\ of\ this\ element\ as\ a\ string.\r\n\ Used\ by\ the\ {@code\ Tower}\ class\ to\ identify\ lids.\r\n\r\n\ @return\ the\ string\ "lid"\r\n
+comment5.params=
+comment5.target=java.lang.String\ getColor()
+comment5.text=\r\n\ Returns\ the\ display\ color\ of\ this\ lid\ based\ on\ its\ number.\r\n\ The\ color\ repeats\ cyclically\ through\ the\ predefined\ list.\r\n\r\n\ @return\ a\ string\ representing\ the\ color\ name\r\n
+comment6.params=x\ y\ w\ h
+comment6.target=void\ makeVisibleAt(int,\ int,\ int,\ int)
+comment6.text=\r\n\ Makes\ the\ lid\ visible\ on\ the\ canvas\ at\ a\ specific\ position\ and\ size.\r\n
+comment7.params=
+comment7.target=void\ makeInvisible()
+comment7.text=\r\n\ Makes\ the\ lid\ invisible\ on\ the\ canvas\ by\ hiding\ its\ underlying\ shape.\r\n
+numComments=8
