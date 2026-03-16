@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.target=TowerItem
+comment0.text=\r\n\ Contrato\ com\u00FAn\ para\ todos\ los\ elementos\ que\ se\ pueden\ apilar\ en\ la\ torre.\r\n\ Tanto\ Cup\ como\ Lid\ implementan\ esta\ interfaz.\r\n\r\n\ @Author\:\ Angel-Garcia\r\n\ @version\ 3.0\ (March\ 2026)\r\n
+comment1.params=
+comment1.target=int\ getNumber()
+comment1.text=N\u00FAmero\ identificador\ del\ elemento.
+comment2.params=
+comment2.target=int\ getHeightCm()
+comment2.text=Altura\ del\ elemento\ en\ cent\u00EDmetros.
+comment3.params=
+comment3.target=java.lang.String\ getType()
+comment3.text=Tipo\ del\ elemento\:\ "cup"\ o\ "lid".
+comment4.params=
+comment4.target=boolean\ isCup()
+comment4.text=Indica\ si\ el\ elemento\ es\ una\ taza.
+comment5.params=
+comment5.target=void\ makeInvisible()
+comment5.text=Oculta\ el\ elemento\ del\ canvas.
+comment6.params=x\ y\ w\ h
+comment6.target=void\ makeVisibleAt(int,\ int,\ int,\ int)
+comment6.text=\r\n\ Dibuja\ el\ elemento\ en\ el\ canvas\ en\ la\ posici\u00F3n\ y\ tama\u00F1o\ indicados.\r\n\r\n\ @param\ x\ coordenada\ X\ izquierda\ en\ p\u00EDxeles.\r\n\ @param\ y\ coordenada\ Y\ superior\ en\ p\u00EDxeles.\r\n\ @param\ w\ ancho\ en\ p\u00EDxeles.\r\n\ @param\ h\ alto\ en\ p\u00EDxeles.\r\n
+numComments=7

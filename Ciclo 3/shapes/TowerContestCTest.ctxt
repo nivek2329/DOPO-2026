@@ -1,0 +1,33 @@
+#BlueJ class context
+comment0.target=TowerContestCTest
+comment0.text=\r\n\ Casos\ de\ prueba\ COMUNES\ para\ TowerContest\ \u2013\ Ciclo\ 3.\r\n\ Estas\ pruebas\ corresponden\ a\ los\ casos\ de\ entrada/salida\r\n\ definidos\ en\ el\ problema\ de\ la\ marat\u00F3n\ (ICPC\ 2025\ Problem\ J).\r\n\r\n\ Todos\ los\ estudiantes\ del\ curso\ deben\ pasar\ estas\ pruebas.\r\n\r\n\ @Author\:\ Angel-Garcia\r\n\ @version\ 3.0\ (March\ 2026)\r\n
+comment1.params=
+comment1.target=void\ shouldSolveSampleInput1()
+comment10.params=
+comment10.target=void\ shouldReturnImpossibleWhenHIsEven()
+comment11.params=
+comment11.target=void\ shouldReturnImpossibleForN1InvalidH()
+comment12.params=
+comment12.target=void\ shouldProduceCorrectContestHeightForSampleCase()
+comment13.params=
+comment13.target=void\ shouldProduceCorrectContestHeightForN5AllValidH()
+comment14.params=solution
+comment14.target=int\ computeContestHeight(java.lang.String)
+comment14.text=\r\n\ Computes\ the\ contest\ height\ formula\:\r\n\ h\ \=\ a[0]\ +\ \u03A3\ max(0,\ a[i]\ -\ a[i-1])\r\n
+comment2.params=
+comment2.target=void\ shouldSolveMinimumHeightForN1()
+comment3.params=
+comment3.target=void\ shouldSolveMinimumHeightForN2()
+comment4.params=
+comment4.target=void\ shouldSolveMinimumHeightForN3()
+comment5.params=
+comment5.target=void\ shouldSolveMinimumHeightForN4()
+comment6.params=
+comment6.target=void\ shouldSolveMaximumHeightForN3()
+comment7.params=
+comment7.target=void\ shouldSolveMaximumHeightForN4()
+comment8.params=
+comment8.target=void\ shouldReturnImpossibleWhenHIsBelowMinimum()
+comment9.params=
+comment9.target=void\ shouldReturnImpossibleWhenHIsAboveMaximum()
+numComments=15
