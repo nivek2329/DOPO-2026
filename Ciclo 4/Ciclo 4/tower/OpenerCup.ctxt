@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=OpenerCup
+comment0.text=\r\n\ Taza\ opener.\r\n\ Al\ entrar\ a\ la\ torre\ elimina\ las\ tapas\ que\ le\ bloquean\ el\ paso.\r\n\r\n\ @author\ Angel-Garcia\r\n\ @version\ 4.0\r\n
+comment1.params=number
+comment1.target=OpenerCup(int)
+comment1.text=\r\n\ Crea\ una\ taza\ opener\ con\ el\ numero\ indicado.\r\n\r\n\ @param\ number\ numero\ de\ la\ taza.\r\n
+comment2.params=
+comment2.target=java.lang.String\ getType()
+comment2.text=\r\n\ Devuelve\ el\ tipo\ de\ taza.\r\n\r\n\ @return\ tipo\ de\ taza\ como\ cadena.\r\n
+comment3.params=items
+comment3.target=void\ removeBlockingLids(java.util.ArrayList)
+comment3.text=\r\n\ Elimina\ de\ la\ lista\ las\ tapas\ que\ bloquean\ el\ paso\ a\ esta\ taza.\r\n\r\n\ @param\ items\ lista\ actual\ de\ elementos\ en\ la\ torre.\r\n
+numComments=4

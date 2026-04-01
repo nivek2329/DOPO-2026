@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=HierarchicalCup
+comment0.text=\r\n\ Taza\ hierarchical.\r\n\ Al\ entrar\ desplaza\ todos\ los\ objetos\ de\ menor\ tamanio\ hacia\ arriba.\r\n\ Si\ llega\ al\ fondo\ de\ la\ torre,\ no\ puede\ ser\ removida.\r\n\r\n\ @author\ Angel-Garcia\r\n\ @version\ 4.0\r\n
+comment1.params=number
+comment1.target=HierarchicalCup(int)
+comment1.text=\r\n\ Crea\ una\ taza\ hierarchical\ con\ el\ numero\ indicado.\r\n\r\n\ @param\ number\ numero\ de\ la\ taza.\r\n
+comment2.params=
+comment2.target=java.lang.String\ getType()
+comment2.text=\r\n\ Devuelve\ el\ tipo\ de\ taza.\r\n\r\n\ @return\ tipo\ de\ taza\ como\ cadena.\r\n
+comment3.params=
+comment3.target=void\ setReachedBottom()
+comment3.text=\r\n\ Marca\ que\ esta\ taza\ llego\ al\ fondo\ de\ la\ torre.\r\n
+comment4.params=
+comment4.target=boolean\ isLocked()
+comment4.text=\r\n\ Indica\ si\ esta\ taza\ llego\ al\ fondo\ y\ no\ puede\ ser\ removida.\r\n\r\n\ @return\ true\ si\ la\ taza\ esta\ bloqueada,\ false\ en\ caso\ contrario.\r\n
+numComments=5

@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=FearfulLid
+comment0.text=\r\n\ Tapa\ fearful.\r\n\ No\ entra\ a\ la\ torre\ si\ su\ taza\ companiera\ no\ esta\ presente.\r\n\ Si\ ya\ esta\ tapando\ a\ su\ taza,\ no\ puede\ ser\ removida.\r\n\r\n\ @author\ Angel-Garcia\r\n\ @version\ 4.0\r\n
+comment1.params=number
+comment1.target=FearfulLid(int)
+comment1.text=\r\n\ Crea\ una\ tapa\ fearful\ con\ el\ numero\ indicado.\r\n\r\n\ @param\ number\ numero\ de\ la\ tapa.\r\n
+comment2.params=
+comment2.target=java.lang.String\ getType()
+comment2.text=\r\n\ Devuelve\ el\ tipo\ de\ tapa.\r\n\r\n\ @return\ tipo\ de\ tapa\ como\ cadena.\r\n
+comment3.params=items
+comment3.target=boolean\ companionIsPresent(java.util.ArrayList)
+comment3.text=\r\n\ Verifica\ si\ la\ taza\ companiera\ de\ esta\ tapa\ esta\ presente\ en\ la\ torre.\r\n\r\n\ @param\ items\ lista\ actual\ de\ elementos\ en\ la\ torre.\r\n\ @return\ true\ si\ la\ taza\ companiera\ existe,\ false\ en\ caso\ contrario.\r\n
+comment4.params=items
+comment4.target=boolean\ isCoveringCup(java.util.ArrayList)
+comment4.text=\r\n\ Verifica\ si\ esta\ tapa\ esta\ cubriendo\ directamente\ a\ su\ taza.\r\n\ Esto\ ocurre\ cuando\ la\ taza\ esta\ inmediatamente\ debajo\ de\ la\ tapa.\r\n\r\n\ @param\ items\ lista\ actual\ de\ elementos\ en\ la\ torre.\r\n\ @return\ true\ si\ la\ tapa\ esta\ cubriendo\ a\ su\ taza.\r\n
+numComments=5

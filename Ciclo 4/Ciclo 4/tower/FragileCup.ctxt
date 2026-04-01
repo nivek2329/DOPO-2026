@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=FragileCup
+comment0.text=\r\n\ Taza\ fragil.\r\n\ Si\ se\ intenta\ colocar\ encima\ una\ taza\ de\ mayor\ tama\u00F1o,\r\n\ la\ taza\ fragil\ se\ elimina\ automaticamente\ de\ la\ torre.\r\n\r\n\ @author\ Angel-Garcia\r\n\ @version\ 4.0\r\n
+comment1.params=number
+comment1.target=FragileCup(int)
+comment1.text=\r\n\ Crea\ una\ taza\ fragil\ con\ el\ numero\ indicado.\r\n\r\n\ @param\ number\ numero\ de\ la\ taza.\r\n
+comment2.params=
+comment2.target=java.lang.String\ getType()
+comment2.text=\r\n\ Devuelve\ el\ tipo\ de\ taza.\r\n\r\n\ @return\ tipo\ de\ taza\ como\ cadena.\r\n
+comment3.params=newCupNumber
+comment3.target=boolean\ breaksUnder(int)
+comment3.text=\r\n\ Indica\ si\ esta\ taza\ se\ rompe\ al\ colocar\ encima\ una\ taza\ de\ mayor\ tamanio.\r\n\r\n\ @param\ newCupNumber\ numero\ de\ la\ taza\ que\ se\ quiere\ apilar\ encima.\r\n\ @return\ true\ si\ la\ taza\ fragil\ debe\ eliminarse,\ false\ en\ caso\ contrario.\r\n
+numComments=4

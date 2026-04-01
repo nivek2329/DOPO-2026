@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=TowerATest
+comment0.text=\r\n\ Pruebas\ de\ aceptacion\ manuales\ para\ la\ clase\ Tower.\r\n\ Incluyen\ pausas\ y\ confirmacion\ explicita\ del\ usuario.\r\n\r\n\ @author\ Angel-Garcia\r\n\ @version\ 4.0\r\n
+comment1.params=
+comment1.target=void\ acceptanceDemoOpenerHierarchicalCrazy()
+comment1.text=\r\n\ Prueba\ de\ aceptacion\ que\ valida\ el\ comportamiento\ de\r\n\ OpenerCup,\ HierarchicalCup\ y\ CrazyLid.\r\n\r\n\ @throws\ Exception\ si\ ocurre\ un\ error\ durante\ la\ ejecucion.\r\n
+comment2.params=
+comment2.target=void\ acceptanceDemoFearfulAndFragile()
+comment2.text=\r\n\ Prueba\ de\ aceptacion\ que\ valida\ el\ comportamiento\ de\r\n\ FearfulLid\ y\ FragileCup.\r\n\r\n\ @throws\ Exception\ si\ ocurre\ un\ error\ durante\ la\ ejecucion.\r\n
+numComments=3
