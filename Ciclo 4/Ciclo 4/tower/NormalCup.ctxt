@@ -1,7 +1,0 @@
-#BlueJ class context
-comment0.target=NormalCup
-comment0.text=\r\n\ Taza\ normal.\r\n\ Se\ comporta\ exactamente\ como\ la\ taza\ del\ ciclo\ anterior.\r\n\r\n\ @author\ Angel-Garcia\r\n\ @version\ 4.0\r\n
-comment1.params=number
-comment1.target=NormalCup(int)
-comment1.text=\r\n\ Crea\ una\ taza\ normal\ con\ el\ numero\ indicado.\r\n\r\n\ @param\ number\ numero\ de\ la\ taza.\r\n
-numComments=2
