@@ -1,0 +1,268 @@
+import static org.junit.Assert.*;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+/**
+ * Pruebas unitarias BDD para Tower - Ciclo 2 (modo invisible).
+ * Cubre: constructor Tower(cups), swap, cover, swapToReduce.
+ */
+public class TowerC2Test {
+
+    private Tower t;
+
+    @Before
+    public void setUp() {
+        t = new Tower(30, 500);
+    }
+
+    // ===========================================================
+    // REQUISITO 10: Constructor Tower(cups)
+    // ===========================================================
+
+    @Test
+    public void shouldCreateTowerWithNcupsNumberedFrom1() {
+        Tower tower = new Tower(4);
+        assertTrue(tower.ok());
+        String[][] items = tower.stackingItems();
+        assertEquals(4, items.length);
+        for (int i = 0; i < 4; i++) {
+            assertEquals("cup", items[i][0]);
+            assertEquals(String.valueOf(i + 1), items[i][1]);
+        }
+    }
+
+    @Test
+    public void shouldHaveCorrectHeightAfterConstructorWithCups() {
+        Tower tower = new Tower(3);
+        int expected = (2*1-1) + (2*2-1) + (2*3-1);
+        assertEquals(expected, tower.height());
+        assertTrue(tower.ok());
+    }
+
+    @Test
+    public void shouldCreateTowerWithSingleCup() {
+        Tower tower = new Tower(1);
+        assertTrue(tower.ok());
+        String[][] items = tower.stackingItems();
+        assertEquals(1, items.length);
+        assertEquals("cup", items[0][0]);
+        assertEquals("1", items[0][1]);
+    }
+
+    @Test
+    public void shouldNotIncludeLidsWhenCreatingWithConstructorCups() {
+        Tower tower = new Tower(3);
+        String[][] items = tower.stackingItems();
+        for (String[] item : items) {
+            assertEquals("cup", item[0]);
+        }
+    }
+
+    // ===========================================================
+    // REQUISITO 11: swap
+    // ===========================================================
+
+    @Test
+    public void shouldSwapTwoCups() {
+        t.pushCup(1);
+        t.pushCup(3);
+        t.swap(new String[]{"cup", "1"}, new String[]{"cup", "3"});
+        assertTrue(t.ok());
+        String[][] items = t.stackingItems();
+        assertEquals("cup", items[0][0]); assertEquals("3", items[0][1]);
+        assertEquals("cup", items[1][0]); assertEquals("1", items[1][1]);
+    }
+
+    @Test
+    public void shouldSwapCupAndLid() {
+        t.pushCup(2);
+        t.pushLid(5);
+        t.swap(new String[]{"cup", "2"}, new String[]{"lid", "5"});
+        assertTrue(t.ok());
+        String[][] items = t.stackingItems();
+        assertEquals("lid", items[0][0]); assertEquals("5", items[0][1]);
+        assertEquals("cup", items[1][0]); assertEquals("2", items[1][1]);
+    }
+
+    @Test
+    public void shouldSwapTwoLids() {
+        t.pushLid(1);
+        t.pushLid(3);
+        t.swap(new String[]{"lid", "1"}, new String[]{"lid", "3"});
+        assertTrue(t.ok());
+        String[][] items = t.stackingItems();
+        assertEquals("lid", items[0][0]); assertEquals("3", items[0][1]);
+        assertEquals("lid", items[1][0]); assertEquals("1", items[1][1]);
+    }
+
+    @Test
+    public void shouldFailSwapWhenFirstObjectNotFound() {
+        t.pushCup(2);
+        t.swap(new String[]{"cup", "9"}, new String[]{"cup", "2"});
+        assertFalse(t.ok());
+        String[][] items = t.stackingItems();
+        assertEquals(1, items.length);
+        assertEquals("2", items[0][1]);
+    }
+
+    @Test
+    public void shouldFailSwapWhenSecondObjectNotFound() {
+        t.pushCup(2);
+        t.swap(new String[]{"cup", "2"}, new String[]{"lid", "2"});
+        assertFalse(t.ok());
+        String[][] items = t.stackingItems();
+        assertEquals(1, items.length);
+        assertEquals("cup", items[0][0]);
+    }
+
+    @Test
+    public void shouldNotChangeStateWhenSwappingElementWithItself() {
+        t.pushCup(3);
+        t.pushCup(5);
+        String[][] before = t.stackingItems();
+        t.swap(new String[]{"cup", "3"}, new String[]{"cup", "3"});
+        assertTrue(t.ok());
+        assertArrayEquals(flatten(before), flatten(t.stackingItems()));
+    }
+
+    @Test
+    public void shouldPreserveSizeAfterSwap() {
+        t.pushCup(1); t.pushCup(2); t.pushCup(3);
+        int sizeBefore = t.stackingItems().length;
+        t.swap(new String[]{"cup","1"}, new String[]{"cup","3"});
+        assertEquals(sizeBefore, t.stackingItems().length);
+    }
+
+    // ===========================================================
+    // REQUISITO 12: cover
+    // ===========================================================
+
+    @Test
+    public void shouldCoverCupWithMatchingLid() {
+        t.pushCup(3);
+        t.pushCup(1);
+        t.pushLid(3);
+        t.cover();
+        assertTrue(t.ok());
+        String[][] items = t.stackingItems();
+        assertEquals(3, items.length);
+        assertEquals("cup", items[0][0]); assertEquals("3", items[0][1]);
+        assertEquals("cup", items[1][0]); assertEquals("1", items[1][1]);
+        assertEquals("lid", items[2][0]); assertEquals("3", items[2][1]);
+    }
+
+    @Test
+    public void shouldCoverAllMatchingPairs() {
+        t.pushCup(2); t.pushCup(4);
+        t.pushLid(4); t.pushLid(2);
+        t.cover();
+        assertTrue(t.ok());
+        int[] lided = t.lidedCups();
+        assertEquals(2, lided.length);
+        assertEquals(2, lided[0]);
+        assertEquals(4, lided[1]);
+    }
+
+    @Test
+    public void shouldNotAffectCupsWithoutMatchingLid() {
+        t.pushCup(5); t.pushCup(2); t.pushLid(2);
+        t.cover();
+        assertTrue(t.ok());
+        String[][] items = t.stackingItems();
+        boolean cup5Found = false;
+        for (String[] item : items) {
+            if ("cup".equals(item[0]) && "5".equals(item[1])) cup5Found = true;
+        }
+        assertTrue(cup5Found);
+    }
+
+    @Test
+    public void shouldPreserveOrphanLids() {
+        t.pushLid(9);
+        t.pushCup(3);
+        t.cover();
+        assertTrue(t.ok());
+        String[][] items = t.stackingItems();
+        boolean orphanFound = false;
+        for (String[] item : items) {
+            if ("lid".equals(item[0]) && "9".equals(item[1])) orphanFound = true;
+        }
+        assertTrue("Orphan lid 9 should still be in tower after cover()", orphanFound);
+    }
+
+    @Test
+    public void shouldNotChangeTowerWhenNoCupsHaveLids() {
+        t.pushCup(1); t.pushCup(2);
+        String[][] before = t.stackingItems();
+        t.cover();
+        assertTrue(t.ok());
+        assertArrayEquals(flatten(before), flatten(t.stackingItems()));
+    }
+
+    // ===========================================================
+    // REQUISITO 13: swapToReduce
+    // ===========================================================
+
+    @Test
+    public void shouldReturnNullWhenNoSwapReducesHeight() {
+        t.pushCup(3);
+        String[][] suggestion = t.swapToReduce();
+        assertTrue(t.ok());
+        assertNull(suggestion);
+    }
+
+    @Test
+    public void shouldSuggestSwapThatReducesHeight() {
+        t.pushCup(2); t.pushLid(2);
+        t.pushCup(5); t.pushLid(5);
+        int before = t.height();
+        String[][] suggestion = t.swapToReduce();
+        assertTrue(t.ok());
+        if (suggestion != null) {
+            assertEquals(2, suggestion.length);
+            t.swap(suggestion[0], suggestion[1]);
+            assertTrue(t.height() < before);
+        }
+    }
+
+    @Test
+    public void shouldReturnTwoIdentifiersOnSuggestion() {
+        t.pushCup(1); t.pushCup(5);
+        t.pushLid(5);
+        String[][] suggestion = t.swapToReduce();
+        if (suggestion != null) {
+            assertEquals(2, suggestion.length);
+            assertNotNull(suggestion[0]);
+            assertNotNull(suggestion[1]);
+            assertEquals(2, suggestion[0].length);
+            assertEquals(2, suggestion[1].length);
+        }
+        assertTrue(t.ok());
+    }
+
+    @Test
+    public void shouldNotModifyTowerWhenCallingSwapToReduce() {
+        t.pushCup(3); t.pushCup(1); t.pushLid(1);
+        String[][] before = t.stackingItems();
+        t.swapToReduce();
+        assertArrayEquals(flatten(before), flatten(t.stackingItems()));
+    }
+
+    // ===========================================================
+    // LIMPIEZA
+    // ===========================================================
+
+    @After
+    public void tearDown() {
+        t = null;
+    }
+
+    private static String[] flatten(String[][] a) {
+        int n = 0; for (String[] r : a) n += r.length;
+        String[] out = new String[n];
+        int k = 0;
+        for (String[] r : a) for (String v : r) out[k++] = v;
+        return out;
+    }
+}
