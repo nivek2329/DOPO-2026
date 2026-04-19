@@ -11,15 +11,17 @@ El cubrimiento inicial fue el siguiente:
 
 ![Reporte Inicial de Cobertura](https://github.com/nivek2329/DOPO-2026/blob/main/imagenes/2.png?raw=true)
 )
+(https://github.com/nivek2329/DOPO-2026/blob/main/imagenes/1.png?raw=true)
+(https://github.com/nivek2329/DOPO-2026/blob/main/imagenes/4.png?raw=true)
 
 ## 2. Decisiones Tomadas
 
 Al analizar el reporte inicial, se identificaron los siguientes puntos críticos:
 
 * **Baja cobertura en TowerContest:** La clase `TowerContest` presentaba solo un 49.8% de cobertura general.
-* **Problema en método `simulate`:** Aunque el método `solve` estaba al 100%, el método `simulate` tenía **0% de cobertura**. Esto se debe a que mezcla lógica de negocio con llamadas a la interfaz gráfica (`JOptionPane`, `Thread.sleep`, `tower.makeVisible`), lo que impide su automatización con JUnit.
+* **Problema en método `simulate`:** Aunque el método `solve` estaba al 100%, el método `simulate` tenía **0% de cobertura**. Esto se debe a que mezcla lógica con llamadas a la interfaz gráfica (`JOptionPane`, `Thread.sleep`, `tower.makeVisible`), lo que impide su automatización con JUnit.
 * **Clases no utilizadas:** Las clases `Triangle` y `Circle` del paquete `shapes` quedaron con 0% de cobertura porque no son utilizadas por el simulador de torre en este ciclo, por lo que no forman parte del código de dominio evaluado.
-
+(https://github.com/nivek2329/DOPO-2026/blob/main/imagenes/5.png?raw=true)
 ### Acciones de Refactorización:
 
 Se decidió refactorizar `TowerContest`, extrayendo la lógica de conversión de alturas a números de taza en un nuevo método público llamado `parseCupNumbers`. Se agregaron pruebas específicas para este nuevo método en `TowerContestTest`, lo que permitió cubrir la lógica que antes quedaba "enterrada" dentro de `simulate`.
@@ -35,5 +37,5 @@ Tras la refactorización y la adición de pruebas, se lograron los siguientes re
 
 ### Conclusión
 
-La refactorización estratégica permitió validar la lógica de negocio crítica sin necesidad de automatizar la interfaz gráfica, asegurando la robustez del componente de dominio del simulador.
+La refactorización estratégica permitió validar la lógica crítica sin necesidad de automatizar la interfaz gráfica,La meta de más del 75% de cubrimiento del código de dominio fue ampliamente superada con un 93,8% en el paquete tower.
 ---
