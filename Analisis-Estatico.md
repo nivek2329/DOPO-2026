@@ -31,7 +31,7 @@ Tras analizar los resultados, se determinó que algunas violaciones eran parte d
 
 Tras aplicar las correcciones y gestionar adecuadamente las supresiones técnicas, el proyecto cumple con los estándares de calidad definidos por la PMD, manteniendo la integridad del diseño que ya teniamos sin bajar la calidad de el analisis dinamico.
 
-![Reporte Final PMD](https://github.com/nivek2329/DOPO-2026/blob/main/imagenes/11.png?raw=true)
-![Reporte Final PMD](https://github.com/nivek2329/DOPO-2026/blob/main/imagenes/12.png?raw=true)
+![Reporte Final PMD](https://github.com/nivek2329/DOPO-2026/blob/main/imagenes/14.png?raw=true)
+![Reporte Final PMD](https://github.com/nivek2329/DOPO-2026/blob/main/imagenes/15.png?raw=true)
 
 ---
