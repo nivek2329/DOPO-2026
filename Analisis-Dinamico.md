@@ -9,7 +9,7 @@ Se ejecutaron todas las pruebas JUnit existentes (TowerC1Test, TowerC2Test, Towe
 
 El cubrimiento inicial fue el siguiente:
 
-![Reporte Inicial de Cobertura](https://drive.google.com/file/d/1ccROj4zWG1q9gddD8ow3JDNhmq-ir0RF/view?usp=sharing)
+![Reporte Inicial de Cobertura]([https://drive.google.com/file/d/1ccROj4zWG1q9gddD8ow3JDNhmq-ir0RF/view?usp=sharing](https://github.com/nivek2329/DOPO-2026/blob/main/imagenes/2.png?raw=true))
 
 ## 2. Decisiones Tomadas
 
@@ -30,7 +30,7 @@ Tras la refactorización y la adición de pruebas, se lograron los siguientes re
 * **Meta superada:** La meta de más del 75% de cubrimiento del código de dominio fue ampliamente superada, logrando un **93.8%** en el paquete `tower`.
 * **Limitación conocida:** El método `simulate` permanece sin cobertura automática debido a su dependencia inherente de la interfaz gráfica.
 
-![Reporte Final de Cobertura (93.8%)]()
+![Reporte Final de Cobertura (93.8%)](https://github.com/nivek2329/DOPO-2026/blob/main/imagenes/6.png?raw=true)
 
 ### Conclusión
 
