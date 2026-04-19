@@ -13,8 +13,8 @@ El escaneo inicial arrojó diversas violaciones de alta prioridad. Las más crí
     * `ConstructorCallsOverridableMethod`: El constructor `Tower(int cups)` llamaba a `pushCup` durante la inicialización.
     * `ReturnEmptyCollectionRatherThanNull`: El método `swapToReduce` retornaba `null` en lugar de una colección vacía.
 
-![Reporte Inicial PMD]((https://github.com/nivek2329/DOPO-2026/blob/main/imagenes/7.png?raw=true))
-![Reporte Inicial PMD]((https://github.com/nivek2329/DOPO-2026/blob/main/imagenes/8.png?raw=true))
+![Reporte Inicial PMD](https://github.com/nivek2329/DOPO-2026/blob/main/imagenes/7.png?raw=true)
+![Reporte Inicial PMD](https://github.com/nivek2329/DOPO-2026/blob/main/imagenes/8.png?raw=true)
 ![Reporte Inicial PMD](https://github.com/nivek2329/DOPO-2026/blob/main/imagenes/9.png?raw=true)
 ![Reporte Inicial PMD](https://github.com/nivek2329/DOPO-2026/blob/main/imagenes/10.png?raw=true)
 )
