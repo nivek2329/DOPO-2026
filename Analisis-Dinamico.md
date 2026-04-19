@@ -9,7 +9,7 @@ Se ejecutaron todas las pruebas JUnit existentes (TowerC1Test, TowerC2Test, Towe
 
 El cubrimiento inicial fue el siguiente:
 
-![Reporte Inicial de Cobertura]()
+![Reporte Inicial de Cobertura](https://drive.google.com/file/d/1ccROj4zWG1q9gddD8ow3JDNhmq-ir0RF/view?usp=sharing)
 
 ## 2. Decisiones Tomadas
 
