@@ -14,7 +14,7 @@ import java.util.*;
  * @author Michael Kolling
  * @version 1.6 (shapes)
  */
-public class Canvas {
+public class Canvas { // NOPMD - singleton with private constructor by design
 
     private static Canvas canvasSingleton;
 
@@ -161,7 +161,12 @@ public class Canvas {
     /**
      * Panel interno que muestra la imagen del canvas.
      */
-    private class CanvasPane extends JPanel {
+    private class CanvasPane extends JPanel { // NOPMD - inner class accesses outer instance fields
+        /**
+         * Dibuja la imagen del canvas en el panel.
+         *
+         * @param g contexto grafico.
+         */
         public void paint(Graphics g) {
             g.drawImage(canvasImage, 0, 0, null);
         }
@@ -170,7 +175,7 @@ public class Canvas {
     /**
      * Clase auxiliar que asocia una figura con su color.
      */
-    private class ShapeDescription {
+    private class ShapeDescription { // NOPMD - inner class accesses outer instance fields
         private Shape shape;
         private String colorString;
 
