@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Circle
+comment0.text=\r\n\ Circulo\ que\ puede\ manipularse\ y\ dibujarse\ en\ el\ canvas.\r\n\ Hereda\ posicion,\ color\ y\ movimientos\ de\ la\ clase\ Shape.\r\n\r\n\ @author\ Michael\ Kolling\ and\ David\ J.\ Barnes\r\n\ @author\ Angel-Garcia\r\n\ @version\ 4.0\r\n
+comment1.params=
+comment1.target=Circle()
+comment1.text=\r\n\ Crea\ un\ circulo\ con\ diametro\ y\ posicion\ por\ defecto.\r\n
+comment2.params=newDiameter
+comment2.target=void\ changeSize(int)
+comment2.text=\r\n\ Cambia\ el\ diametro\ del\ circulo.\r\n\r\n\ @param\ newDiameter\ nuevo\ diametro\ en\ pixeles.\r\n
+comment3.params=
+comment3.target=void\ draw()
+comment3.text=\r\n\ Dibuja\ el\ circulo\ en\ el\ canvas.\r\n
+numComments=4

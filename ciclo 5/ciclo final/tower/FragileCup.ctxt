@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=FragileCup
+comment1.params=number
+comment1.target=FragileCup(int)
+comment2.params=
+comment2.target=java.lang.String\ getType()
+comment3.params=newCupNumber
+comment3.target=boolean\ breaksUnder(int)
+comment4.params=x\ y\ w\ h
+comment4.target=void\ makeVisibleAt(int,\ int,\ int,\ int)
+comment5.params=
+comment5.target=void\ makeInvisible()
+numComments=6
