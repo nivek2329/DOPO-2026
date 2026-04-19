@@ -14,7 +14,7 @@ El escaneo inicial arrojó diversas violaciones de alta prioridad. Las más crí
     * `ReturnEmptyCollectionRatherThanNull`: El método `swapToReduce` retornaba `null` en lugar de una colección vacía.
 
 ![Reporte Inicial PMD]((https://github.com/nivek2329/DOPO-2026/blob/main/imagenes/7.png?raw=true))
-![Reporte Inicial PMD](https://github.com/nivek2329/DOPO-2026/blob/main/imagenes/8.png?raw=true)
+![Reporte Inicial PMD]((https://github.com/nivek2329/DOPO-2026/blob/main/imagenes/8.png?raw=true))
 ![Reporte Inicial PMD](https://github.com/nivek2329/DOPO-2026/blob/main/imagenes/9.png?raw=true)
 ![Reporte Inicial PMD](https://github.com/nivek2329/DOPO-2026/blob/main/imagenes/10.png?raw=true)
 )
