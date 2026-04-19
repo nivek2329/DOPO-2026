@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=TowerCC4Test
+comment0.text=\r\n\ Casos\ de\ prueba\ comunes\ para\ la\ clase\ Tower\ \u2013\ Ciclo\ 4.\r\n\ Estas\ pruebas\ verifican\ comportamientos\ base\ compartidos\r\n\r\n\r\n\ @author\ Angel-Garcia\r\n\ @version\ 4.0\r\n
+comment1.params=
+comment1.target=void\ shouldAllowCreatingFragileOnlyByFragileKeyword()
+comment1.text=\r\n\ Verifica\ que\ una\ taza\ fragil\ solo\ pueda\ crearse\ mediante\r\n\ el\ uso\ explicito\ del\ tipo\ "fragile".\r\n
+comment2.params=
+comment2.target=void\ openerShouldNotRemoveLidsBelowFirstCupFromTop()
+comment2.text=\r\n\ Verifica\ que\ una\ OpenerCup\ no\ elimine\ tapas\ que\ se\ encuentren\r\n\ por\ debajo\ de\ la\ primera\ taza\ al\ descender\ desde\ la\ cima.\r\n
+comment3.params=
+comment3.target=void\ fearfulLidShouldNotEnterWithoutCompanionCup()
+comment3.text=\r\n\ Verifica\ que\ una\ FearfulLid\ no\ pueda\ entrar\ a\ la\ torre\r\n\ si\ su\ taza\ compa\u00F1era\ no\ est\u00E1\ presente.\r\n
+comment4.params=
+comment4.target=void\ crazyLidShouldBeBaseAndStayAfterCover()
+comment4.text=\r\n\ Verifica\ que\ una\ CrazyLid\ se\ coloque\ en\ la\ base\ de\ la\ torre\r\n\ y\ que\ la\ operaci\u00F3n\ cover\ no\ modifique\ su\ posici\u00F3n.\r\n
+numComments=5

@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=NormalLid
+comment0.text=\r\n\ Tapa\ normal.\ Implementa\ el\ dibujo\ como\ un\ rectangulo\ simple.\r\n\r\n\ @author\ Angel-Garcia\r\n\ @version\ 4.0\r\n
+comment1.params=number
+comment1.target=NormalLid(int)
+comment2.params=x\ y\ w\ h
+comment2.target=void\ makeVisibleAt(int,\ int,\ int,\ int)
+comment3.params=
+comment3.target=void\ makeInvisible()
+numComments=4
