@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="ciclo final" project="ciclo final" tests="94" started="94" failures="1" errors="0" ignored="0">
+  <testsuite name="tests.TowerCC4Test" time="0.011">
+    <testcase name="fearfulLidShouldNotEnterWithoutCompanionCup" classname="tests.TowerCC4Test" time="0.008"/>
+    <testcase name="shouldAllowCreatingFragileOnlyByFragileKeyword" classname="tests.TowerCC4Test" time="0.001"/>
+    <testcase name="crazyLidShouldBeBaseAndStayAfterCover" classname="tests.TowerCC4Test" time="0.001"/>
+    <testcase name="openerShouldNotRemoveLidsBelowFirstCupFromTop" classname="tests.TowerCC4Test" time="0.001"/>
+  </testsuite>
+  <testsuite name="tests.TowerContestTest" time="0.029">
+    <testcase name="shouldSolveN5H9" classname="tests.TowerContestTest" time="0.003"/>
+    <testcase name="shouldReturnImpossibleForN3HTooLarge" classname="tests.TowerContestTest" time="0.0"/>
+    <testcase name="shouldReturnImpossibleForN3HTooSmall" classname="tests.TowerContestTest" time="0.0"/>
+    <testcase name="shouldSolveN5H11" classname="tests.TowerContestTest" time="0.001"/>
+    <testcase name="shouldSolveN5H13" classname="tests.TowerContestTest" time="0.0"/>
+    <testcase name="shouldSolveN5H15" classname="tests.TowerContestTest" time="0.0"/>
+    <testcase name="shouldReturnImpossibleForN2HTooLarge" classname="tests.TowerContestTest" time="0.0"/>
+    <testcase name="shouldReturnImpossibleForN2HTooSmall" classname="tests.TowerContestTest" time="0.0"/>
+    <testcase name="shouldParseCupNumbersFromSampleCase" classname="tests.TowerContestTest" time="0.005"/>
+    <testcase name="shouldSolveN2OnlyValidHeight" classname="tests.TowerContestTest" time="0.001"/>
+    <testcase name="shouldReturnImpossibleForAllEvenHFrom2To20" classname="tests.TowerContestTest" time="0.001"/>
+    <testcase name="shouldParseSingleCupNumber" classname="tests.TowerContestTest" time="0.0"/>
+    <testcase name="shouldSolveN4MaxHeight" classname="tests.TowerContestTest" time="0.001"/>
+    <testcase name="shouldSolveSampleInput4And9" classname="tests.TowerContestTest" time="0.0"/>
+    <testcase name="shouldReturnImpossibleForN1EvenH" classname="tests.TowerContestTest" time="0.0"/>
+    <testcase name="shouldReturnImpossibleForN3EvenH" classname="tests.TowerContestTest" time="0.001"/>
+    <testcase name="shouldReturnImpossibleForN4EvenH" classname="tests.TowerContestTest" time="0.0"/>
+    <testcase name="shouldReturnImpossibleForN5EvenH" classname="tests.TowerContestTest" time="0.001"/>
+    <testcase name="shouldSolveN3MaxHeight" classname="tests.TowerContestTest" time="0.0"/>
+    <testcase name="shouldReturnImpossibleForN4HAboveMax" classname="tests.TowerContestTest" time="0.001"/>
+    <testcase name="shouldReturnImpossibleForN4HBelowMin" classname="tests.TowerContestTest" time="0.0"/>
+    <testcase name="shouldSolveN4MidHeight" classname="tests.TowerContestTest" time="0.0"/>
+    <testcase name="shouldParseMultipleCupNumbers" classname="tests.TowerContestTest" time="0.001"/>
+    <testcase name="shouldSolveN4MinHeight" classname="tests.TowerContestTest" time="0.0"/>
+    <testcase name="shouldSolveN3MinHeight" classname="tests.TowerContestTest" time="0.0"/>
+    <testcase name="shouldProduceCorrectHeightForAllN1ToN6" classname="tests.TowerContestTest" time="0.011"/>
+    <testcase name="shouldContainNDistinctOddHeightsInSolution" classname="tests.TowerContestTest" time="0.001"/>
+    <testcase name="shouldSolveN1ValidH" classname="tests.TowerContestTest" time="0.0"/>
+    <testcase name="shouldReturnImpossibleForN5HTooLarge" classname="tests.TowerContestTest" time="0.0"/>
+    <testcase name="shouldReturnImpossibleForN1InvalidH" classname="tests.TowerContestTest" time="0.0"/>
+  </testsuite>
+  <testsuite name="tests.TowerATest" time="62.593">
+    <testcase name="acceptanceDemoOpenerHierarchicalCrazy" classname="tests.TowerATest" time="33.271"/>
+    <testcase name="acceptanceDemoFearfulAndFragile" classname="tests.TowerATest" time="29.322"/>
+  </testsuite>
+  <testsuite name="tests.TowerC4Test" time="0.012">
+    <testcase name="fearfulLidShouldRequireCompanionCupAndCannotLeaveIfCovering" classname="tests.TowerC4Test" time="0.008"/>
+    <testcase name="openerShouldRemoveOnlyTopLidsUntilFirstCup" classname="tests.TowerC4Test" time="0.001"/>
+    <testcase name="crazyLidShouldBePlacedAtBaseAndCoverShouldNotMoveIt" classname="tests.TowerC4Test" time="0.001"/>
+    <testcase name="hierarchicalShouldBubbleDownPastSmallerItemsAndLockIfReachesBottom" classname="tests.TowerC4Test" time="0.0"/>
+    <testcase name="fragileShouldBreakWhenBiggerCupIsPushedAboveIgnoringLids" classname="tests.TowerC4Test" time="0.001"/>
+  </testsuite>
+  <testsuite name="tests.TowerContestCTest" time="0.006">
+    <testcase name="shouldReturnImpossibleWhenHIsBelowMinimum" classname="tests.TowerContestCTest" time="0.001"/>
+    <testcase name="shouldSolveMaximumHeightForN3" classname="tests.TowerContestCTest" time="0.0"/>
+    <testcase name="shouldSolveMaximumHeightForN4" classname="tests.TowerContestCTest" time="0.001"/>
+    <testcase name="shouldSolveSampleInput1" classname="tests.TowerContestCTest" time="0.0"/>
+    <testcase name="shouldProduceCorrectContestHeightForSampleCase" classname="tests.TowerContestCTest" time="0.0"/>
+    <testcase name="shouldProduceCorrectContestHeightForN5AllValidH" classname="tests.TowerContestCTest" time="0.001"/>
+    <testcase name="shouldReturnImpossibleWhenHIsEven" classname="tests.TowerContestCTest" time="0.0"/>
+    <testcase name="shouldReturnImpossibleWhenHIsAboveMaximum" classname="tests.TowerContestCTest" time="0.001"/>
+    <testcase name="shouldSolveMinimumHeightForN1" classname="tests.TowerContestCTest" time="0.0"/>
+    <testcase name="shouldSolveMinimumHeightForN2" classname="tests.TowerContestCTest" time="0.001"/>
+    <testcase name="shouldSolveMinimumHeightForN3" classname="tests.TowerContestCTest" time="0.0"/>
+    <testcase name="shouldSolveMinimumHeightForN4" classname="tests.TowerContestCTest" time="0.0"/>
+    <testcase name="shouldReturnImpossibleForN1InvalidH" classname="tests.TowerContestCTest" time="0.001"/>
+  </testsuite>
+  <testsuite name="tests.TowerC1Test" time="0.016">
+    <testcase name="shouldRemoveCupLeavingOrphanLid" classname="tests.TowerC1Test" time="0.001"/>
+    <testcase name="shouldOrderOnlyLidsAsOrphansDesc" classname="tests.TowerC1Test" time="0.002"/>
+    <testcase name="shouldRemoveExistingLid" classname="tests.TowerC1Test" time="0.001"/>
+    <testcase name="shouldIncreaseHeightWhenPushingCups" classname="tests.TowerC1Test" time="0.0"/>
+    <testcase name="shouldFailPopCupIfTopIsNotCup" classname="tests.TowerC1Test" time="0.0"/>
+    <testcase name="shouldRejectDuplicateCup" classname="tests.TowerC1Test" time="0.001"/>
+    <testcase name="shouldRejectDuplicateLid" classname="tests.TowerC1Test" time="0.001"/>
+    <testcase name="shouldStartEmptyAndOk" classname="tests.TowerC1Test" time="0.0"/>
+    <testcase name="shouldReverseWithOrphanLids" classname="tests.TowerC1Test" time="0.001"/>
+    <testcase name="shouldFailPopLidIfTopIsNotLid" classname="tests.TowerC1Test" time="0.001"/>
+    <testcase name="shouldFailRemovingNonExistingLid" classname="tests.TowerC1Test" time="0.001"/>
+    <testcase name="shouldReturnToOriginalAfterDoubleReverse" classname="tests.TowerC1Test" time="0.0"/>
+    <testcase name="shouldOrderCupsDescAndLidsAsc" classname="tests.TowerC1Test" time="0.001"/>
+    <testcase name="shouldOrderOnlyCupsDesc" classname="tests.TowerC1Test" time="0.0"/>
+    <testcase name="shouldCountLidAsOneCm" classname="tests.TowerC1Test" time="0.001"/>
+    <testcase name="shouldComputeHeightAfterMixedOps" classname="tests.TowerC1Test" time="0.0"/>
+    <testcase name="shouldReturnLidedCupsInAscendingOrder" classname="tests.TowerC1Test" time="0.001"/>
+    <testcase name="shouldPlaceOrphanLidsAtEnd" classname="tests.TowerC1Test" time="0.001"/>
+    <testcase name="shouldKeepSameAfterOrderingTwice" classname="tests.TowerC1Test" time="0.0"/>
+    <testcase name="shouldRespectMaxHeight" classname="tests.TowerC1Test" time="0.002"/>
+  </testsuite>
+  <testsuite name="tests.TowerC2Test" time="0.046">
+    <testcase name="shouldSwapCupAndLid" classname="tests.TowerC2Test" time="0.001"/>
+    <testcase name="shouldSuggestSwapThatReducesHeight" classname="tests.TowerC2Test" time="0.0"/>
+    <testcase name="shouldFailSwapWhenSecondObjectNotFound" classname="tests.TowerC2Test" time="0.002"/>
+    <testcase name="shouldNotModifyTowerWhenCallingSwapToReduce" classname="tests.TowerC2Test" time="0.0"/>
+    <testcase name="shouldPreserveSizeAfterSwap" classname="tests.TowerC2Test" time="0.002"/>
+    <testcase name="shouldReturnNullWhenNoSwapReducesHeight" classname="tests.TowerC2Test" time="0.001"/>
+    <testcase name="shouldPreserveOrphanLids" classname="tests.TowerC2Test" time="0.002"/>
+    <testcase name="shouldCreateTowerWithNcupsNumberedFrom1" classname="tests.TowerC2Test" time="0.001"/>
+    <testcase name="shouldNotAffectCupsWithoutMatchingLid" classname="tests.TowerC2Test" time="0.0"/>
+    <testcase name="shouldHaveCorrectHeightAfterConstructorWithCups" classname="tests.TowerC2Test" time="0.0"/>
+    <testcase name="shouldNotChangeStateWhenSwappingElementWithItself" classname="tests.TowerC2Test" time="0.001"/>
+    <testcase name="shouldCoverCupWithMatchingLid" classname="tests.TowerC2Test" time="0.001"/>
+    <testcase name="shouldCoverAllMatchingPairs" classname="tests.TowerC2Test" time="0.001"/>
+    <testcase name="shouldNotChangeTowerWhenNoCupsHaveLids" classname="tests.TowerC2Test" time="0.0"/>
+    <testcase name="shouldReturnTwoIdentifiersOnSuggestion" classname="tests.TowerC2Test" time="0.03">
+      <failure>java.lang.AssertionError: expected:&lt;2&gt; but was:&lt;0&gt;&#13;
+	at org.junit.Assert.fail(Assert.java:89)&#13;
+	at org.junit.Assert.failNotEquals(Assert.java:835)&#13;
+	at org.junit.Assert.assertEquals(Assert.java:647)&#13;
+	at org.junit.Assert.assertEquals(Assert.java:633)&#13;
+	at tests.TowerC2Test.shouldReturnTwoIdentifiersOnSuggestion(TowerC2Test.java:237)&#13;
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)&#13;
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)&#13;
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)&#13;
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)&#13;
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)&#13;
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)&#13;
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)&#13;
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)&#13;
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)&#13;
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)&#13;
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)&#13;
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)&#13;
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)&#13;
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)&#13;
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)&#13;
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)&#13;
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)&#13;
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)&#13;
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)&#13;
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)&#13;
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:93)&#13;
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:40)&#13;
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:520)&#13;
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:748)&#13;
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:443)&#13;
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:211)&#13;
+&#13;
+</failure>
+    </testcase>
+    <testcase name="shouldNotIncludeLidsWhenCreatingWithConstructorCups" classname="tests.TowerC2Test" time="0.0"/>
+    <testcase name="shouldSwapTwoCups" classname="tests.TowerC2Test" time="0.0"/>
+    <testcase name="shouldSwapTwoLids" classname="tests.TowerC2Test" time="0.0"/>
+    <testcase name="shouldFailSwapWhenFirstObjectNotFound" classname="tests.TowerC2Test" time="0.0"/>
+    <testcase name="shouldCreateTowerWithSingleCup" classname="tests.TowerC2Test" time="0.001"/>
+  </testsuite>
+</testrun>

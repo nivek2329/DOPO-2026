@@ -1,0 +1,204 @@
+package shapes;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.Shape;
+import java.util.List;
+import java.util.*;
+
+/**
+ * Canvas que permite realizar dibujos graficos simples.
+ * Se utiliza como soporte grafico para las figuras del paquete shapes.
+ *
+ * @author Bruce Quig
+ * @author Michael Kolling
+ * @version 1.6 (shapes)
+ */
+public class Canvas { // NOPMD - singleton with private constructor by design
+
+    private static Canvas canvasSingleton;
+
+    /**
+     * Devuelve la instancia unica del canvas.
+     *
+     * @return instancia del canvas.
+     */
+    public static Canvas getCanvas() {
+        if (canvasSingleton == null) {
+            canvasSingleton = new Canvas("BlueJ Shapes Demo", 300, 300, Color.white);
+        }
+        canvasSingleton.setVisible(true);
+        return canvasSingleton;
+    }
+
+    private JFrame frame;
+    private CanvasPane canvas;
+    private Graphics2D graphic;
+    private Color backgroundColour;
+    private Image canvasImage;
+    private List<Object> objects;
+    private HashMap<Object, ShapeDescription> shapes;
+
+    /**
+     * Crea un canvas con titulo, dimensiones y color de fondo indicados.
+     *
+     * @param title titulo de la ventana.
+     * @param width ancho del canvas.
+     * @param height altura del canvas.
+     * @param bgColour color de fondo.
+     */
+    private Canvas(String title, int width, int height, Color bgColour) {
+        frame = new JFrame();
+        canvas = new CanvasPane();
+        frame.setContentPane(canvas);
+        frame.setTitle(title);
+        canvas.setPreferredSize(new Dimension(width, height));
+        backgroundColour = bgColour;
+        frame.pack();
+        objects = new ArrayList<Object>();
+        shapes = new HashMap<Object, ShapeDescription>();
+    }
+
+    /**
+     * Cambia la visibilidad del canvas.
+     *
+     * @param visible indica si el canvas debe ser visible.
+     */
+    public void setVisible(boolean visible) {
+        if (graphic == null) {
+            Dimension size = canvas.getSize();
+            canvasImage = canvas.createImage(size.width, size.height);
+            graphic = (Graphics2D) canvasImage.getGraphics();
+            graphic.setColor(backgroundColour);
+            graphic.fillRect(0, 0, size.width, size.height);
+            graphic.setColor(Color.black);
+        }
+        frame.setVisible(visible);
+    }
+
+    /**
+     * Dibuja una figura en el canvas.
+     *
+     * @param referenceObject objeto que referencia la figura.
+     * @param color color de la figura.
+     * @param shape figura a dibujar.
+     */
+    public void draw(Object referenceObject, String color, Shape shape) {
+        objects.remove(referenceObject);
+        objects.add(referenceObject);
+        shapes.put(referenceObject, new ShapeDescription(shape, color));
+        redraw();
+    }
+
+    /**
+     * Elimina una figura del canvas.
+     *
+     * @param referenceObject objeto que referencia la figura.
+     */
+    public void erase(Object referenceObject) {
+        objects.remove(referenceObject);
+        shapes.remove(referenceObject);
+        redraw();
+    }
+
+    /**
+     * Cambia el color de dibujo actual.
+     *
+     * @param colorString nombre del color.
+     */
+    public void setForegroundColor(String colorString) {
+        if (colorString.equals("red"))
+            graphic.setColor(Color.red);
+        else if (colorString.equals("black"))
+            graphic.setColor(Color.black);
+        else if (colorString.equals("blue"))
+            graphic.setColor(Color.blue);
+        else if (colorString.equals("yellow"))
+            graphic.setColor(Color.yellow);
+        else if (colorString.equals("green"))
+            graphic.setColor(Color.green);
+        else if (colorString.equals("magenta"))
+            graphic.setColor(Color.magenta);
+        else if (colorString.equals("white"))
+            graphic.setColor(Color.white);
+        else
+            graphic.setColor(Color.black);
+    }
+
+    /**
+     * Detiene la ejecucion durante un tiempo determinado.
+     *
+     * @param milliseconds tiempo de espera en milisegundos.
+     */
+    public void wait(int milliseconds) {
+        try {
+            Thread.sleep(milliseconds);
+        } catch (Exception e) { }
+    }
+
+    /**
+     * Redibuja todas las figuras del canvas.
+     */
+    private void redraw() {
+        erase();
+        for (Iterator i = objects.iterator(); i.hasNext();) {
+            shapes.get(i.next()).draw(graphic);
+        }
+        canvas.repaint();
+    }
+
+    /**
+     * Borra completamente el contenido del canvas.
+     */
+    private void erase() {
+        Color original = graphic.getColor();
+        graphic.setColor(backgroundColour);
+        Dimension size = canvas.getSize();
+        graphic.fill(new java.awt.Rectangle(0, 0, size.width, size.height));
+        graphic.setColor(original);
+    }
+
+    /**
+     * Panel interno que muestra la imagen del canvas.
+     */
+    private class CanvasPane extends JPanel { // NOPMD - inner class accesses outer instance fields
+        /**
+         * Dibuja la imagen del canvas en el panel.
+         *
+         * @param g contexto grafico.
+         */
+        public void paint(Graphics g) {
+            g.drawImage(canvasImage, 0, 0, null);
+        }
+    }
+
+    /**
+     * Clase auxiliar que asocia una figura con su color.
+     */
+    private class ShapeDescription { // NOPMD - inner class accesses outer instance fields
+        private Shape shape;
+        private String colorString;
+
+        /**
+         * Crea una descripcion de figura.
+         *
+         * @param shape figura grafica.
+         * @param color color de la figura.
+         */
+        public ShapeDescription(Shape shape, String color) {
+            this.shape = shape;
+            colorString = color;
+        }
+
+        /**
+         * Dibuja la figura asociada.
+         *
+         * @param graphic contexto grafico.
+         */
+        public void draw(Graphics2D graphic) {
+            setForegroundColor(colorString);
+            graphic.draw(shape);
+            graphic.fill(shape);
+        }
+    }
+}

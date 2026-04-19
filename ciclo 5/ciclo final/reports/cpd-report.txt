@@ -1,0 +1,1102 @@
+Found a 38 line (278 tokens) duplication in the following files: 
+Starting at line 22 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tower\FragileCup.java
+Starting at line 30 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tower\HierarchicalCup.java
+Starting at line 21 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tower\NormalCup.java
+Starting at line 32 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tower\OpenerCup.java
+
+    }
+
+    @Override
+    public void makeVisibleAt(int x, int y, int w, int h) {
+        base.makeInvisible(); leftArm.makeInvisible(); rightArm.makeInvisible();
+        base = new Rectangle(); leftArm = new Rectangle(); rightArm = new Rectangle();
+        int heightCm     = getHeightCm();
+        int oneCmPx      = heightCm > 0 ? Math.max(1, h / heightCm) : 1;
+        int baseHeightPx = Math.max(1, oneCmPx);
+        int baseY        = y + h - baseHeightPx;
+        base.changeSize(baseHeightPx, w);
+        base.changeColor(getColor());
+        base.moveHorizontal(-RECT_DEFAULT_X + x);
+        base.moveVertical(-RECT_DEFAULT_Y + baseY);
+        base.makeVisible();
+        int armHeight  = Math.max(0, h - baseHeightPx);
+        int armWidthPx = Math.max(1, baseHeightPx);
+        if (armHeight > 0) {
+            leftArm.changeSize(armHeight, armWidthPx);
+            leftArm.changeColor(getColor());
+            leftArm.moveHorizontal(-RECT_DEFAULT_X + x);
+            leftArm.moveVertical(-RECT_DEFAULT_Y + y);
+            leftArm.makeVisible();
+            rightArm.changeSize(armHeight, armWidthPx);
+            rightArm.changeColor(getColor());
+            rightArm.moveHorizontal(-RECT_DEFAULT_X + (x + w - armWidthPx));
+            rightArm.moveVertical(-RECT_DEFAULT_Y + y);
+            rightArm.makeVisible();
+        }
+    }
+
+    @Override
+    public void makeInvisible() {
+        base.makeInvisible();
+        leftArm.makeInvisible();
+        rightArm.makeInvisible();
+    }
+}
+=====================================================================
+Found a 22 line (119 tokens) duplication in the following files: 
+Starting at line 110 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerContestCTest.java
+Starting at line 223 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerContestTest.java
+
+            assertEquals("Height mismatch for h=" + h, h, computeContestHeight(sol));
+        }
+    }
+
+    // ── Helper ──────────────────────────────────────────────────────────
+
+    /**
+     * Computes the contest height formula:
+     * h = a[0] + Σ max(0, a[i] - a[i-1])
+     */
+    private static int computeContestHeight(String solution) {
+        String[] parts = solution.split(" ");
+        int[] a = new int[parts.length];
+        for (int i = 0; i < parts.length; i++) {
+            a[i] = Integer.parseInt(parts[i]);
+        }
+        int h = a[0];
+        for (int i = 1; i < a.length; i++) {
+            if (a[i] > a[i - 1]) h += a[i] - a[i - 1];
+        }
+        return h;
+    }
+
+=====================================================================
+Found a 17 line (89 tokens) duplication in the following files: 
+Starting at line 241 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC1Test.java
+Starting at line 251 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC2Test.java
+Starting at line 137 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC4Test.java
+
+        assertArrayEquals(new int[]{2, 4, 6}, t.lidedCups());
+    }
+
+    @After
+    public void tearDown() {
+        t = null;
+    }
+
+    private static String[] flatten(String[][] a) {
+        int n = 0;
+        for (String[] r : a) n += r.length;
+        String[] out = new String[n];
+        int k = 0;
+        for (String[] r : a) for (String v : r) out[k++] = v;
+        return out;
+    }
+}
+=====================================================================
+Found a 18 line (86 tokens) duplication in the following files: 
+Starting at line 16 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tower\CrazyLid.java
+Starting at line 34 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tower\FearfulLid.java
+Starting at line 17 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tower\NormalLid.java
+
+    }
+
+    @Override
+    public void makeVisibleAt(int x, int y, int w, int h) {
+        rect.makeInvisible();
+        rect = new Rectangle();
+        rect.changeSize(h, w);
+        rect.changeColor(getColor());
+        rect.moveHorizontal(-RECT_DEFAULT_X + x);
+        rect.moveVertical(-RECT_DEFAULT_Y + y);
+        rect.makeVisible();
+    }
+
+    @Override
+    public void makeInvisible() {
+        rect.makeInvisible();
+    }
+}
+=====================================================================
+Found a 5 line (73 tokens) duplication in the following files: 
+Starting at line 451 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tower\Tower.java
+Starting at line 647 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tower\Tower.java
+
+        ArrayList<Integer> list = new ArrayList<>();
+        for (int i = 0; i < items.size() - 1; i++) {
+            TowerItem a = items.get(i);
+            TowerItem b = items.get(i + 1);
+            if (a.isCup() && !b.isCup() && a.getNumber() == b.getNumber()) {
+
+=====================================================================
+Found a 12 line (70 tokens) duplication in the following files: 
+Starting at line 35 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC4Test.java
+Starting at line 38 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerCC4Test.java
+
+        t.pushCup(4);
+        t.pushLid(4);
+        t.pushCup(3);
+        t.pushLid(3);
+        assertTrue(t.ok());
+
+        t.pushCup("opener", 5);
+        assertTrue(t.ok());
+
+        String[][] items = t.stackingItems();
+        assertEquals(4, items.length);
+        assertEquals("cup", items[0][0]);    assertEquals("4", items[0][1]);
+
+=====================================================================
+Found a 25 line (57 tokens) duplication in the following files: 
+Starting at line 20 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\shapes\Rectangle.java
+Starting at line 22 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\shapes\Triangle.java
+
+        super(DEFAULT_X, DEFAULT_Y, "magenta");
+        this.height = 30;
+        this.width  = 40;
+    }
+
+    /**
+     * Cambia el tamaño del rectangulo.
+     *
+     * @param newHeight nueva altura en pixeles.
+     * @param newWidth nuevo ancho en pixeles.
+     */
+    public void changeSize(int newHeight, int newWidth) {
+        erase();
+        height = newHeight;
+        width  = newWidth;
+        draw();
+    }
+
+    /**
+     * Dibuja el rectangulo en el canvas.
+     */
+    @Override
+    protected void draw() {
+        if (isVisible) {
+            Canvas canvas = Canvas.getCanvas();
+
+=====================================================================
+Found a 4 line (55 tokens) duplication in the following files: 
+Starting at line 148 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC1Test.java
+Starting at line 196 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC1Test.java
+
+        assertEquals(6, items.length);
+        assertEquals("cup", items[0][0]); assertEquals("6", items[0][1]);
+        assertEquals("cup", items[1][0]); assertEquals("4", items[1][1]);
+        assertEquals("cup", items[2][0]); assertEquals("2", items[2][1]);
+
+=====================================================================
+Found a 7 line (52 tokens) duplication in the following files: 
+Starting at line 124 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC4Test.java
+Starting at line 74 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerCC4Test.java
+
+        t.pushCup(3);
+        t.pushCup(1);
+        t.pushLid("crazy", 3);
+        assertTrue(t.ok());
+
+        String[][] before = t.stackingItems();
+        assertEquals("crazy", before[0][0]);
+
+=====================================================================
+Found a 9 line (52 tokens) duplication in the following files: 
+Starting at line 30 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tower\Cup.java
+Starting at line 30 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tower\Lid.java
+
+        }
+
+    public String getColor() {
+        return COLORS[Math.floorMod(number - 1, COLORS.length)];
+        }
+
+    @Override public abstract void makeVisibleAt(int x, int y, int w, int h);
+    @Override public abstract void makeInvisible();
+}
+=====================================================================
+Found a 3 line (49 tokens) duplication in the following files: 
+Starting at line 74 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC2Test.java
+Starting at line 151 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC2Test.java
+
+        String[][] items = t.stackingItems();
+        assertEquals("cup", items[0][0]); assertEquals("3", items[0][1]);
+        assertEquals("cup", items[1][0]); assertEquals("1", items[1][1]);
+
+=====================================================================
+Found a 11 line (46 tokens) duplication in the following files: 
+Starting at line 103 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\shapes\Shape.java
+Starting at line 124 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\shapes\Shape.java
+
+    public void slowMoveHorizontal(int distance) {
+        int delta;
+        if (distance < 0) {
+            delta = -1;
+        } else {
+            delta = 1;
+        }
+
+        distance = Math.abs(distance);
+
+        for (int i = 0; i < distance; i++) {
+
+=====================================================================
+Found a 2 line (45 tokens) duplication in the following files: 
+Starting at line 119 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC1Test.java
+Starting at line 175 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC1Test.java
+
+        assertEquals("cup", items[0][0]); assertEquals("5", items[0][1]);
+        assertEquals("lid", items[1][0]); assertEquals("3", items[1][1]);
+
+=====================================================================
+Found a 5 line (43 tokens) duplication in the following files: 
+Starting at line 148 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC2Test.java
+Starting at line 79 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC4Test.java
+
+        t.cover();
+        assertTrue(t.ok());
+        String[][] items = t.stackingItems();
+        assertEquals(3, items.length);
+        assertEquals("cup", items[0][0]); assertEquals("3", items[0][1]);
+
+=====================================================================
+Found a 7 line (43 tokens) duplication in the following files: 
+Starting at line 9 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tower\Cup.java
+Starting at line 9 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tower\Lid.java
+
+public abstract class Cup implements TowerItem {
+    protected static final String[] COLORS = {"red","blue","green","yellow","magenta","black"};
+    protected static final int RECT_DEFAULT_X = 70;
+    protected static final int RECT_DEFAULT_Y = 15;
+    protected final int number;
+
+    public Cup(int number) {
+
+=====================================================================
+Found a 9 line (43 tokens) duplication in the following files: 
+Starting at line 10 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tower\FragileCup.java
+Starting at line 11 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tower\OpenerCup.java
+
+    public FragileCup(int number) {
+        super(number);
+        this.base     = new Rectangle();
+        this.leftArm  = new Rectangle();
+        this.rightArm = new Rectangle();
+    }
+
+    @Override
+    public String getType() { return "fragile"; }
+
+=====================================================================
+Found a 5 line (41 tokens) duplication in the following files: 
+Starting at line 61 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC1Test.java
+Starting at line 114 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC2Test.java
+
+        t.pushCup(4);
+        assertFalse(t.ok());
+        String[][] items = t.stackingItems();
+        assertEquals(1, items.length);
+        assertEquals("cup", items[0][0]); assertEquals("4", items[0][1]);
+
+=====================================================================
+Found a 4 line (41 tokens) duplication in the following files: 
+Starting at line 62 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC1Test.java
+Starting at line 136 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC1Test.java
+
+        assertFalse(t.ok());
+        String[][] items = t.stackingItems();
+        assertEquals(1, items.length);
+        assertEquals("cup", items[0][0]); assertEquals("4", items[0][1]);
+
+=====================================================================
+Found a 4 line (41 tokens) duplication in the following files: 
+Starting at line 74 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC1Test.java
+Starting at line 116 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC1Test.java
+
+        assertFalse(t.ok());
+        String[][] items = t.stackingItems();
+        assertEquals(2, items.length);
+        assertEquals("cup", items[0][0]); assertEquals("4", items[0][1]);
+
+=====================================================================
+Found a 4 line (39 tokens) duplication in the following files: 
+Starting at line 136 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC1Test.java
+Starting at line 115 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC2Test.java
+
+        assertTrue(t.ok());
+        String[][] items = t.stackingItems();
+        assertEquals(1, items.length);
+        assertEquals("cup", items[0][0]); assertEquals("3", items[0][1]);
+
+=====================================================================
+Found a 7 line (39 tokens) duplication in the following files: 
+Starting at line 76 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tower\Tower.java
+Starting at line 254 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tower\Tower.java
+
+            setOk(false, "La torre excederia la altura maxima."); 
+            return;
+        }
+
+        for (int k = items.size() - 1; k >= 0; k--) {
+            TowerItem it = items.get(k);
+            if (!it.isCup()) continue;
+
+=====================================================================
+Found a 6 line (38 tokens) duplication in the following files: 
+Starting at line 41 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC1Test.java
+Starting at line 86 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC2Test.java
+
+        assertEquals("cup", items[0][0]); assertEquals("1", items[0][1]);
+        assertEquals("cup", items[1][0]); assertEquals("2", items[1][1]);
+    }
+
+    @Test
+    public void shouldCountLidAsOneCm() {
+
+=====================================================================
+Found a 4 line (37 tokens) duplication in the following files: 
+Starting at line 38 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC1Test.java
+Starting at line 50 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC1Test.java
+Starting at line 74 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC1Test.java
+Starting at line 116 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC1Test.java
+
+        assertEquals(3, t.height());
+        String[][] items = t.stackingItems();
+        assertEquals(2, items.length);
+        assertEquals("cup", items[0][0]); assertEquals("1", items[0][1]);
+
+=====================================================================
+Found a 9 line (37 tokens) duplication in the following files: 
+Starting at line 10 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tower\FragileCup.java
+Starting at line 16 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tower\NormalCup.java
+
+    public FragileCup(int number) {
+        super(number);
+        this.base     = new Rectangle();
+        this.leftArm  = new Rectangle();
+        this.rightArm = new Rectangle();
+    }
+
+    @Override
+    public String getType() { return "fragile"; }
+
+=====================================================================
+Found a 7 line (37 tokens) duplication in the following files: 
+Starting at line 124 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tower\Tower.java
+Starting at line 225 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tower\Tower.java
+
+    public void popCup() {
+        if (items.isEmpty()) { 
+            setOk(false, "La torre esta vacia."); 
+            return;
+        }
+        TowerItem top = items.get(items.size() - 1);
+        if (!top.isCup()) { 
+
+=====================================================================
+Found a 6 line (37 tokens) duplication in the following files: 
+Starting at line 153 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tower\Tower.java
+Starting at line 254 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tower\Tower.java
+
+            setOk(false, "No existe taza con numero " + i + "."); 
+            return;
+        }
+        for (int k = items.size() - 1; k >= 0; k--) {
+            TowerItem it = items.get(k);
+            if (it.isCup() && it.getNumber() == i) {
+
+=====================================================================
+Found a 4 line (36 tokens) duplication in the following files: 
+Starting at line 83 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC2Test.java
+Starting at line 94 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC2Test.java
+
+        t.swap(new String[]{"cup", "2"}, new String[]{"lid", "5"});
+        assertTrue(t.ok());
+        String[][] items = t.stackingItems();
+        assertEquals("lid", items[0][0]); assertEquals("5", items[0][1]);
+
+=====================================================================
+Found a 2 line (35 tokens) duplication in the following files: 
+Starting at line 41 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC1Test.java
+Starting at line 67 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC4Test.java
+
+        assertEquals("cup", items[0][0]); assertEquals("1", items[0][1]);
+        assertEquals("cup", items[1][0]); assertEquals("2", items[1][1]);
+
+=====================================================================
+Found a 2 line (35 tokens) duplication in the following files: 
+Starting at line 150 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC1Test.java
+Starting at line 47 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC4Test.java
+
+        assertEquals("cup", items[1][0]); assertEquals("4", items[1][1]);
+        assertEquals("cup", items[2][0]); assertEquals("2", items[2][1]);
+
+=====================================================================
+Found a 4 line (35 tokens) duplication in the following files: 
+Starting at line 183 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC1Test.java
+Starting at line 149 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC2Test.java
+Starting at line 80 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC4Test.java
+
+        t.orderTower();
+        String[][] items = t.stackingItems();
+        assertEquals(3, items.length);
+        assertEquals("cup", items[0][0]); assertEquals("5", items[0][1]);
+
+=====================================================================
+Found a 2 line (35 tokens) duplication in the following files: 
+Starting at line 186 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC1Test.java
+Starting at line 86 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC2Test.java
+
+        assertEquals("cup", items[0][0]); assertEquals("5", items[0][1]);
+        assertEquals("cup", items[1][0]); assertEquals("3", items[1][1]);
+
+=====================================================================
+Found a 4 line (35 tokens) duplication in the following files: 
+Starting at line 194 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC1Test.java
+Starting at line 42 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC4Test.java
+
+        t.orderTower();
+        String[][] items = t.stackingItems();
+        assertEquals(4, items.length);
+        assertEquals("cup", items[0][0]); assertEquals("6", items[0][1]);
+
+=====================================================================
+Found a 2 line (35 tokens) duplication in the following files: 
+Starting at line 198 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC1Test.java
+Starting at line 222 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC1Test.java
+
+        assertEquals("cup", items[1][0]); assertEquals("4", items[1][1]);
+        assertEquals("lid", items[2][0]); assertEquals("6", items[2][1]);
+
+=====================================================================
+Found a 14 line (34 tokens) duplication in the following files: 
+Starting at line 33 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\shapes\Circle.java
+Starting at line 35 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\shapes\Rectangle.java
+
+        draw();
+    }
+
+    /**
+     * Dibuja el circulo en el canvas.
+     */
+    @Override
+    protected void draw() {
+        if (isVisible) {
+            Canvas canvas = Canvas.getCanvas();
+            canvas.draw(
+                this,
+                color,
+                new Ellipse2D.Double(xPosition, yPosition, diameter, diameter)
+
+=====================================================================
+Found a 5 line (34 tokens) duplication in the following files: 
+Starting at line 104 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC2Test.java
+Starting at line 114 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC2Test.java
+
+        t.swap(new String[]{"cup", "9"}, new String[]{"cup", "2"});
+        assertFalse(t.ok());
+        String[][] items = t.stackingItems();
+        assertEquals(1, items.length);
+        assertEquals("2", items[0][1]);
+
+=====================================================================
+Found a 2 line (34 tokens) duplication in the following files: 
+Starting at line 700 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tower\Tower.java
+Starting at line 708 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tower\Tower.java
+
+        for (int i = 0; i < result.size(); i++) {
+            if (result.get(i).isCup() && result.get(i).getNumber() == n) {
+
+=====================================================================
+Found a 2 line (33 tokens) duplication in the following files: 
+Starting at line 150 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC1Test.java
+Starting at line 85 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC4Test.java
+
+        assertEquals("cup", items[1][0]); assertEquals("4", items[1][1]);
+        assertEquals("cup", items[2][0]); assertEquals("2", items[2][1]);
+
+=====================================================================
+Found a 5 line (33 tokens) duplication in the following files: 
+Starting at line 10 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tower\FragileCup.java
+Starting at line 11 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tower\HierarchicalCup.java
+Starting at line 16 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tower\NormalCup.java
+Starting at line 11 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tower\OpenerCup.java
+
+    public FragileCup(int number) {
+        super(number);
+        this.base     = new Rectangle();
+        this.leftArm  = new Rectangle();
+        this.rightArm = new Rectangle();
+
+=====================================================================
+Found a 7 line (33 tokens) duplication in the following files: 
+Starting at line 76 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tower\Tower.java
+Starting at line 153 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tower\Tower.java
+
+            setOk(false, "La torre excederia la altura maxima."); 
+            return;
+        }
+
+        for (int k = items.size() - 1; k >= 0; k--) {
+            TowerItem it = items.get(k);
+            if (!it.isCup()) continue;
+
+=====================================================================
+Found a 5 line (31 tokens) duplication in the following files: 
+Starting at line 61 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC1Test.java
+Starting at line 104 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC2Test.java
+
+        t.pushCup(4);
+        assertFalse(t.ok());
+        String[][] items = t.stackingItems();
+        assertEquals(1, items.length);
+        assertEquals("cup", items[0][0]); assertEquals("4", items[0][1]);
+
+=====================================================================
+Found a 7 line (31 tokens) duplication in the following files: 
+Starting at line 85 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC1Test.java
+Starting at line 94 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC1Test.java
+
+        t.popCup();
+        assertFalse(t.ok());
+        assertArrayEquals(flatten(before), flatten(t.stackingItems()));
+    }
+
+    @Test
+    public void shouldFailPopLidIfTopIsNotLid() {
+
+=====================================================================
+Found a 5 line (31 tokens) duplication in the following files: 
+Starting at line 115 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC1Test.java
+Starting at line 62 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC4Test.java
+
+        t.removeCup(3);
+        assertTrue(t.ok());
+        String[][] items = t.stackingItems();
+        assertEquals(2, items.length);
+        assertEquals("cup", items[0][0]); assertEquals("5", items[0][1]);
+
+=====================================================================
+Found a 3 line (31 tokens) duplication in the following files: 
+Starting at line 118 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC1Test.java
+Starting at line 185 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC1Test.java
+
+        assertEquals(2, items.length);
+        assertEquals("cup", items[0][0]); assertEquals("5", items[0][1]);
+        assertEquals("lid", items[1][0]); assertEquals("3", items[1][1]);
+
+=====================================================================
+Found a 3 line (31 tokens) duplication in the following files: 
+Starting at line 148 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC1Test.java
+Starting at line 83 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC4Test.java
+
+        assertEquals(6, items.length);
+        assertEquals("cup", items[0][0]); assertEquals("6", items[0][1]);
+        assertEquals("cup", items[1][0]); assertEquals("4", items[1][1]);
+
+=====================================================================
+Found a 6 line (30 tokens) duplication in the following files: 
+Starting at line 77 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC1Test.java
+Starting at line 49 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerCC4Test.java
+
+        assertEquals("cup", items[0][0]); assertEquals("4", items[0][1]);
+        assertEquals("lid", items[1][0]); assertEquals("4", items[1][1]);
+    }
+
+    @Test
+    public void shouldFailPopCupIfTopIsNotCup() {
+
+=====================================================================
+Found a 7 line (30 tokens) duplication in the following files: 
+Starting at line 85 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC1Test.java
+Starting at line 127 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC1Test.java
+
+        t.popCup();
+        assertFalse(t.ok());
+        assertArrayEquals(flatten(before), flatten(t.stackingItems()));
+    }
+
+    @Test
+    public void shouldFailPopLidIfTopIsNotLid() {
+
+=====================================================================
+Found a 7 line (30 tokens) duplication in the following files: 
+Starting at line 94 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC1Test.java
+Starting at line 127 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC1Test.java
+
+        t.popLid();
+        assertFalse(t.ok());
+        assertArrayEquals(flatten(before), flatten(t.stackingItems()));
+    }
+
+    @Test
+    public void shouldRespectMaxHeight() {
+
+=====================================================================
+Found a 7 line (30 tokens) duplication in the following files: 
+Starting at line 126 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC2Test.java
+Starting at line 200 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC2Test.java
+
+        t.swap(new String[]{"cup", "3"}, new String[]{"cup", "3"});
+        assertTrue(t.ok());
+        assertArrayEquals(flatten(before), flatten(t.stackingItems()));
+    }
+
+    @Test
+    public void shouldPreserveSizeAfterSwap() {
+
+=====================================================================
+Found a 2 line (29 tokens) duplication in the following files: 
+Starting at line 40 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC1Test.java
+Starting at line 107 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC1Test.java
+Starting at line 50 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC2Test.java
+
+        assertEquals(2, items.length);
+        assertEquals("cup", items[0][0]); assertEquals("1", items[0][1]);
+
+=====================================================================
+Found a 2 line (29 tokens) duplication in the following files: 
+Starting at line 64 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC1Test.java
+Starting at line 76 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC1Test.java
+Starting at line 220 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC1Test.java
+Starting at line 45 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC4Test.java
+
+        assertEquals(1, items.length);
+        assertEquals("cup", items[0][0]); assertEquals("4", items[0][1]);
+
+=====================================================================
+Found a 4 line (29 tokens) duplication in the following files: 
+Starting at line 74 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC1Test.java
+Starting at line 63 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC4Test.java
+
+        assertFalse(t.ok());
+        String[][] items = t.stackingItems();
+        assertEquals(2, items.length);
+        assertEquals("cup", items[0][0]); assertEquals("4", items[0][1]);
+
+=====================================================================
+Found a 4 line (29 tokens) duplication in the following files: 
+Starting at line 136 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC1Test.java
+Starting at line 105 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC2Test.java
+
+        assertTrue(t.ok());
+        String[][] items = t.stackingItems();
+        assertEquals(1, items.length);
+        assertEquals("cup", items[0][0]); assertEquals("3", items[0][1]);
+
+=====================================================================
+Found a 2 line (29 tokens) duplication in the following files: 
+Starting at line 138 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC1Test.java
+Starting at line 151 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC2Test.java
+
+        assertEquals(1, items.length);
+        assertEquals("cup", items[0][0]); assertEquals("3", items[0][1]);
+
+=====================================================================
+Found a 14 line (29 tokens) duplication in the following files: 
+Starting at line 85 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerContestCTest.java
+Starting at line 38 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerContestTest.java
+
+        assertEquals("impossible", TowerContest.solve(3, 6));
+    }
+
+    @Test
+    public void shouldReturnImpossibleForN1InvalidH() {
+        assertEquals("impossible", TowerContest.solve(1, 3));
+    }
+
+    // ===================================================================
+    // Verificación de altura computada (acepta cualquier permutación válida)
+    // ===================================================================
+
+    @Test
+    public void shouldProduceCorrectContestHeightForSampleCase() {
+
+=====================================================================
+Found a 16 line (29 tokens) duplication in the following files: 
+Starting at line 136 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tower\Tower.java
+Starting at line 237 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tower\Tower.java
+
+            setOk(false, "HierarchicalCup llego al fondo y no puede removerse."); 
+            return;
+        }
+
+        top.makeInvisible();
+        items.remove(items.size() - 1);
+        lastOk = true;
+        redraw();
+    }
+
+    /**
+     * Elimina la taza con numero i en cualquier posicion de la torre.
+     *
+     * @param i numero de la taza a eliminar.
+     */
+    public void removeCup(int i) {
+
+=====================================================================
+Found a 6 line (28 tokens) duplication in the following files: 
+Starting at line 86 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC1Test.java
+Starting at line 127 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC2Test.java
+Starting at line 201 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC2Test.java
+
+        assertFalse(t.ok());
+        assertArrayEquals(flatten(before), flatten(t.stackingItems()));
+    }
+
+    @Test
+    public void shouldFailPopLidIfTopIsNotLid() {
+
+=====================================================================
+Found a 6 line (28 tokens) duplication in the following files: 
+Starting at line 95 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC1Test.java
+Starting at line 127 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC2Test.java
+Starting at line 201 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC2Test.java
+
+        assertFalse(t.ok());
+        assertArrayEquals(flatten(before), flatten(t.stackingItems()));
+    }
+
+    @Test
+    public void shouldRespectMaxHeight() {
+
+=====================================================================
+Found a 6 line (28 tokens) duplication in the following files: 
+Starting at line 128 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC1Test.java
+Starting at line 127 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC2Test.java
+Starting at line 201 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC2Test.java
+
+        assertFalse(t.ok());
+        assertArrayEquals(flatten(before), flatten(t.stackingItems()));
+    }
+
+    @Test
+    public void shouldRemoveExistingLid() {
+
+=====================================================================
+Found a 5 line (28 tokens) duplication in the following files: 
+Starting at line 171 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC1Test.java
+Starting at line 182 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC1Test.java
+
+        t.pushLid(3); t.pushLid(1); t.pushLid(5);
+        t.orderTower();
+        String[][] items = t.stackingItems();
+        assertEquals(3, items.length);
+        assertEquals("lid", items[0][0]); assertEquals("5", items[0][1]);
+
+=====================================================================
+Found a 4 line (28 tokens) duplication in the following files: 
+Starting at line 147 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC2Test.java
+Starting at line 185 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC2Test.java
+
+        t.pushLid(3);
+        t.cover();
+        assertTrue(t.ok());
+        String[][] items = t.stackingItems();
+
+=====================================================================
+Found a 3 line (27 tokens) duplication in the following files: 
+Starting at line 174 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC1Test.java
+Starting at line 85 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC2Test.java
+
+        assertEquals(3, items.length);
+        assertEquals("lid", items[0][0]); assertEquals("5", items[0][1]);
+        assertEquals("lid", items[1][0]); assertEquals("3", items[1][1]);
+
+=====================================================================
+Found a 5 line (27 tokens) duplication in the following files: 
+Starting at line 171 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC2Test.java
+Starting at line 185 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC2Test.java
+
+        t.pushCup(5); t.pushCup(2); t.pushLid(2);
+        t.cover();
+        assertTrue(t.ok());
+        String[][] items = t.stackingItems();
+        boolean cup5Found = false;
+
+=====================================================================
+Found a 6 line (27 tokens) duplication in the following files: 
+Starting at line 131 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC4Test.java
+Starting at line 81 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerCC4Test.java
+
+        assertEquals("3", before[0][1]);
+
+        t.cover();
+        assertTrue(t.ok());
+
+        String[][] after = t.stackingItems();
+
+=====================================================================
+Found a 8 line (27 tokens) duplication in the following files: 
+Starting at line 8 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tower\CrazyLid.java
+Starting at line 9 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tower\FearfulLid.java
+
+    public CrazyLid(int number) {
+        super(number);
+        this.rect = new Rectangle();
+    }
+
+    @Override
+    public String getType() { 
+        return "crazy"; 
+
+=====================================================================
+Found a 5 line (26 tokens) duplication in the following files: 
+Starting at line 42 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC1Test.java
+Starting at line 54 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC1Test.java
+Starting at line 87 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC2Test.java
+
+        assertEquals("cup", items[1][0]); assertEquals("2", items[1][1]);
+    }
+
+    @Test
+    public void shouldCountLidAsOneCm() {
+
+=====================================================================
+Found a 3 line (26 tokens) duplication in the following files: 
+Starting at line 63 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC1Test.java
+Starting at line 106 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC1Test.java
+Starting at line 137 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC1Test.java
+Starting at line 49 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC2Test.java
+
+        String[][] items = t.stackingItems();
+        assertEquals(1, items.length);
+        assertEquals("cup", items[0][0]); assertEquals("4", items[0][1]);
+
+=====================================================================
+Found a 5 line (26 tokens) duplication in the following files: 
+Starting at line 177 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC1Test.java
+Starting at line 188 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC1Test.java
+
+        assertEquals("lid", items[2][0]); assertEquals("1", items[2][1]);
+    }
+
+    @Test
+    public void shouldOrderOnlyCupsDesc() {
+
+=====================================================================
+Found a 15 line (26 tokens) duplication in the following files: 
+Starting at line 13 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC2Test.java
+Starting at line 17 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC4Test.java
+
+public class TowerC2Test {
+
+    private Tower t;
+
+    @Before
+    public void setUp() {
+        t = new Tower(30, 500);
+    }
+
+    // ===========================================================
+    // REQUISITO 10: Constructor Tower(cups)
+    // ===========================================================
+
+    @Test
+    public void shouldCreateTowerWithNcupsNumberedFrom1() {
+
+=====================================================================
+Found a 4 line (26 tokens) duplication in the following files: 
+Starting at line 72 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC2Test.java
+Starting at line 94 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC2Test.java
+
+        t.swap(new String[]{"cup", "1"}, new String[]{"cup", "3"});
+        assertTrue(t.ok());
+        String[][] items = t.stackingItems();
+        assertEquals("cup", items[0][0]); assertEquals("3", items[0][1]);
+
+=====================================================================
+Found a 5 line (26 tokens) duplication in the following files: 
+Starting at line 76 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC2Test.java
+Starting at line 98 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC2Test.java
+
+        assertEquals("cup", items[1][0]); assertEquals("1", items[1][1]);
+    }
+
+    @Test
+    public void shouldSwapCupAndLid() {
+
+=====================================================================
+Found a 4 line (26 tokens) duplication in the following files: 
+Starting at line 147 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC2Test.java
+Starting at line 171 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC2Test.java
+
+        t.pushLid(3);
+        t.cover();
+        assertTrue(t.ok());
+        String[][] items = t.stackingItems();
+
+=====================================================================
+Found a 18 line (26 tokens) duplication in the following files: 
+Starting at line 160 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tower\Tower.java
+Starting at line 260 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tower\Tower.java
+
+                    setOk(false, "HierarchicalCup llego al fondo y no puede removerse."); 
+                    return;
+                }
+                it.makeInvisible();
+                items.remove(k);
+                lastOk = true;
+                redraw();
+                return;
+            }
+        }
+    }
+
+    /**
+     * Agrega una tapa normal con numero i. Mantiene compatibilidad con ciclos anteriores.
+     *
+     * @param i numero de la tapa.
+     */
+    public void pushLid(int i) {
+
+=====================================================================
+Found a 10 line (25 tokens) duplication in the following files: 
+Starting at line 33 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\shapes\Circle.java
+Starting at line 37 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\shapes\Triangle.java
+
+        draw();
+    }
+
+    /**
+     * Dibuja el circulo en el canvas.
+     */
+    @Override
+    protected void draw() {
+        if (isVisible) {
+            Canvas canvas = Canvas.getCanvas();
+
+=====================================================================
+Found a 6 line (25 tokens) duplication in the following files: 
+Starting at line 27 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerATest.java
+Starting at line 37 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerCC4Test.java
+
+        t.makeVisible();
+
+        t.pushCup(4);
+        t.pushLid(4);
+        t.pushCup(3);
+        t.pushLid(3);
+
+=====================================================================
+Found a 4 line (25 tokens) duplication in the following files: 
+Starting at line 38 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC1Test.java
+Starting at line 63 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC4Test.java
+
+        assertEquals(3, t.height());
+        String[][] items = t.stackingItems();
+        assertEquals(2, items.length);
+        assertEquals("cup", items[0][0]); assertEquals("1", items[0][1]);
+
+=====================================================================
+Found a 4 line (25 tokens) duplication in the following files: 
+Starting at line 61 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC1Test.java
+Starting at line 73 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC1Test.java
+
+        t.pushCup(4);
+        assertFalse(t.ok());
+        String[][] items = t.stackingItems();
+        assertEquals(1, items.length);
+
+=====================================================================
+Found a 4 line (25 tokens) duplication in the following files: 
+Starting at line 115 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC1Test.java
+Starting at line 135 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC1Test.java
+
+        t.removeCup(3);
+        assertTrue(t.ok());
+        String[][] items = t.stackingItems();
+        assertEquals(2, items.length);
+
+=====================================================================
+Found a 2 line (25 tokens) duplication in the following files: 
+Starting at line 138 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC1Test.java
+Starting at line 74 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC2Test.java
+
+        assertEquals(1, items.length);
+        assertEquals("cup", items[0][0]); assertEquals("3", items[0][1]);
+
+=====================================================================
+Found a 2 line (25 tokens) duplication in the following files: 
+Starting at line 221 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC1Test.java
+Starting at line 49 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerCC4Test.java
+
+        assertEquals("cup", items[0][0]); assertEquals("4", items[0][1]);
+        assertEquals("lid", items[1][0]); assertEquals("4", items[1][1]);
+
+=====================================================================
+Found a 5 line (25 tokens) duplication in the following files: 
+Starting at line 41 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC4Test.java
+Starting at line 79 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC4Test.java
+Starting at line 45 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerCC4Test.java
+
+        t.pushCup("opener", 5);
+        assertTrue(t.ok());
+
+        String[][] items = t.stackingItems();
+        assertEquals(4, items.length);
+
+=====================================================================
+Found a 2 line (25 tokens) duplication in the following files: 
+Starting at line 46 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerC4Test.java
+Starting at line 49 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tests\TowerCC4Test.java
+
+        assertEquals("cup", items[0][0]);    assertEquals("4", items[0][1]);
+        assertEquals("lid", items[1][0]);    assertEquals("4", items[1][1]);
+
+=====================================================================
+Found a 5 line (25 tokens) duplication in the following files: 
+Starting at line 20 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tower\NormalCup.java
+Starting at line 16 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tower\NormalLid.java
+
+        this.rightArm = new Rectangle();
+    }
+
+    @Override
+    public void makeVisibleAt(int x, int y, int w, int h) {
+
+=====================================================================
+Found a 4 line (25 tokens) duplication in the following files: 
+Starting at line 310 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tower\Tower.java
+Starting at line 322 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tower\Tower.java
+
+            if (it.isCup()) {
+                ArrayList<TowerItem> block = new ArrayList<>();
+                block.add(it);
+                blocks.add(block);
+
+=====================================================================
+Found a 2 line (25 tokens) duplication in the following files: 
+Starting at line 549 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tower\Tower.java
+Starting at line 713 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tower\Tower.java
+
+        for (TowerItem it : items) {
+            if (!it.isCup() && it.getNumber() == n) 
+
+=====================================================================
+Found a 4 line (25 tokens) duplication in the following files: 
+Starting at line 605 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tower\Tower.java
+Starting at line 618 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tower\Tower.java
+
+    private ArrayList<Integer> cupNumbers() {
+        ArrayList<Integer> nums = new ArrayList<>();
+        for (TowerItem it : items) { 
+            if (it.isCup()) nums.add(it.getNumber()); 
+
+=====================================================================
+Found a 11 line (25 tokens) duplication in the following files: 
+Starting at line 608 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tower\Tower.java
+Starting at line 621 of C:\Users\kevin\OneDrive\Escritorio\ciclo 5\ciclo final\tower\Tower.java
+
+            if (it.isCup()) nums.add(it.getNumber()); 
+        }
+        return nums;
+    }
+    
+    /**
+     * Obtiene los numeros de todas las tapas presentes en la torre.
+     *
+     * @return lista con los numeros de las tapas.
+     */
+    private ArrayList<Integer> lidNumbers() {
+

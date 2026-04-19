@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="java.lang.Class">
+		<list key="findhistory">
+			<item value="private static final class CanvasPane extends JPanel"/>
+			<item value="swapToReduce"/>
+			<item value="Tower(int cups)"/>
+			<item value="private static class DrawState"/>
+			<item value="private static final class ShapeDescription"/>
+			<item value="private class ShapeDescription"/>
+			<item value="private class CanvasPane extends JPanel"/>
+		</list>
+	</section>
+</section>
